@@ -1,3 +1,5 @@
+![CI](https://github.com/PierreCointre/Polytech_Tours_TP_QLOG/actions/workflows/ci.yml/badge.svg)
+
 # 🎾 Corpo Padel — Application de gestion de tournois
 
 Application web de gestion de tournois de padel inter-entreprises, développée
