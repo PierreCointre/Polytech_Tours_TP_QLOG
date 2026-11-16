@@ -10,7 +10,7 @@ describe('Parcours visiteur', () => {
 
   it("peut consulter la page d'accueil", () => {
     cy.visit('/')
-    // verification que le visteru voit bien la page d'acceuil
+    // verification que le visteur voit bien la page d'acceuil
     cy.contains('h1', 'Corpo Padel').should('be.visible')
     cy.get('[data-cy="home-login"]').should('be.visible')
     cy.get('[data-cy="nav-login"]').should('be.visible')
