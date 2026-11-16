@@ -6,6 +6,8 @@ cahier-des-charges-tp.html
 # ─── Python / Backend ───
 backend/venv/
 backend/.venv/
+venv/
+
 **/__pycache__/
 *.py[cod]
 *.egg-info/
