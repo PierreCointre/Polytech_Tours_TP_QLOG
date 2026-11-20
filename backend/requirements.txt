@@ -1,4 +1,4 @@
-# ⚠️ Versions de Python supportées : 3.11, 3.12 ou 3.13 (PAS 3.14).
+# Versions de Python supportées : 3.11, 3.12 ou 3.13 (PAS 3.14).
 # Les versions épinglées ci-dessous n'ont pas encore de wheels pré-compilés
 # pour Python 3.14 (cp314) : notamment bcrypt et pydantic-core, qui devraient
 # alors être compilés depuis les sources (chaîne Rust/C requise) et l'install
