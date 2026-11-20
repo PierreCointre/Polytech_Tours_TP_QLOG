@@ -42,16 +42,19 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           python seed.py
-          nohup uvicorn app.main:app --port 8000 > /dev/null 2>&1 &
+          nohup uvicorn app.main:app --host 127.0.0.1 --port 8000 > backend.log 2>&1 &
+
       - name: Installer le frontend
         working-directory: frontend
         run: npm ci
+
       - name: Lint (ESLint)
         working-directory: frontend
         run: npm run lint
+
       - name: Tests Cypress (headless)
         working-directory: frontend
         run: |
-          npm run dev > /dev/null 2>&1 &
-          npx wait-on http://localhost:5173 http://localhost:8000/api/v1/health
+          nohup npm run dev -- --host 127.0.0.1 > frontend.log 2>&1 &
+          npx --yes wait-on --timeout 60000 http-get://127.0.0.1:5173 http-get://127.0.0.1:8000/api/v1/health || (echo "backlog: " && cat ../backend/backend.log && echo "frontlog:" && cat frontend.log && exit 1)
           npx cypress run
